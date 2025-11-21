@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create a new note securely with SafeGuard. Your notes are private and safely stored.">
+    <meta name="keywords" content="SafeGuard new note, create note, secure notes, note app">
+    <meta name="author" content="GB Tech">
+    <link rel="stylesheet" href="/styles/shared.css">
+    <link rel="stylesheet" href="/user/styles/new-note.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>SafeGuard | New Note</title>
+</head>
+<body>
+
+<header>
+    <div class="logo"><span class="safe">Safe</span><span class="guard">Guard</span></div>
+</header>
+
+<main>
+    <section class="note-section">
+        <div class="container">
+            <h2>Create a New Note</h2>
+            <form id="newNoteForm">
+                <div class="group">
+                    <label for="noteTitle">Title</label>
+                    <input type="text" id="noteTitle" placeholder="Enter note title" required aria-required="true">
+                </div>
+                <div class="group">
+                    <label for="noteContent">Content</label>
+                    <textarea id="noteContent" placeholder="Write your note here..." required aria-required="true"></textarea>
+                </div>
+                <button type="submit" class="btn">Save Note</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 SafeGuard | Powered by <b>GB Tech</b></p>
+</footer>
+
+<script type="module" src="/user/JavaScript/new-note.js"></script>
+</body>
+</html>

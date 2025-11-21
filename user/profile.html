@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SafeGuard Profile: Manage your account and update your personal information securely.">
+    <meta name="keywords" content="SafeGuard profile, account settings, update profile, notes app">
+    <meta name="author" content="GB Tech">
+    <link rel="stylesheet" href="/user/styles/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>SafeGuard Profile</title>
+</head>
+<body>
+
+<header>
+    <div class="logo"><span class="safe">Safe</span><span class="guard">Guard</span></div>
+</header>
+
+<main>
+    <section class="profile-section">
+        <div class="container">
+            <h2>Your Profile</h2>
+
+            <div id="profileInfo">
+                <p><strong>Email:</strong> <span id="emailDisplay">loading...</span></p>
+                <p><strong>Full Name:</strong> <span id="nameDisplay">loading...</span></p>
+                <p><strong>Phone:</strong> <span id="phoneDisplay">loading...</span></p>
+            </div>
+
+            <h3>Edit Profile Info</h3>
+            <form id="editProfileForm">
+                <div class="group">
+                    <input type="text" id="editFullName" placeholder="Full Name" required aria-required="true">
+                </div>
+                <div class="group">
+                    <input type="tel" id="editPhone" placeholder="Phone Number" required aria-required="true">
+                </div>
+                <button type="submit" class="btn">Update Profile</button>
+            </form>
+
+            <form id="updatePasswordForm">
+                <h3>Update Password</h3>
+                <div class="group password-group">
+                    <input type="password" id="newPassword" placeholder="New Password" required aria-required="true">
+                    <button type="button" id="toggleNewPassword"><i class="fas fa-eye"></i></button>
+                </div>
+                <button type="submit" class="btn">Update Password</button>
+            </form>
+
+            <button id="logoutBtn" class="btn logout-btn">Log Out</button>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 SafeGuard | Powered by <b>GB Tech</b></p>
+</footer>
+
+<script type="module" src="/user/JavaScript/profile.js"></script>
+</body>
+</html>

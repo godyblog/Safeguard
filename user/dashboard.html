@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SafeGuard: your notes deserve a safe place. Securely store and manage your notes online with SafeGuard.">
+    <meta name="keywords" content="notes app, online notes, SafeGuard, note management, secure notes">
+    <meta name="author" content="GB Tech">
+    <link rel="stylesheet" href="/user/styles/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>SafeGuard Dashboard</title>
+</head>
+<body>
+
+<header id="header">
+    <div class="logo"><span class="safe">Safe</span><span class="guard">Guard</span></div>
+    <button id="menuToggle" aria-label="Toggle menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    <nav id="sidebar" aria-hidden="true">
+        <ul>
+            <li><a href="new.html" aria-label="Add new note">New Note</a></li>
+            <li><a href="profile.html" aria-label="Profile Settings">Profile</a></li>
+            <li><a href="#" id="logoutBtn" aria-label="Logout">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="dashboard-section">
+        <div class="container">
+            <div class="head">
+                <input type="search" id="search" placeholder="Search notes" aria-label="Search notes">
+                <button id="searchBtn" aria-label="Search"><i class="fas fa-search"></i></button>
+            </div>
+
+            <div id="displayContainer" class="displayContainer default">
+                <p class="fallback">No notes yet! <br><br> <a class="btn" href="/pages/new.html" aria-label="Create new note">Add Note</a></p>
+            </div>
+
+            <div class="view-toggle">
+                <button id="displayBlock" aria-label="Display notes as list"><i class="fas fa-list"></i></button>
+                <button id="displayGrid" aria-label="Display notes as grid"><i class="fas fa-th"></i></button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 SafeGuard | Powered by <b>GB Tech</b></p>
+</footer>
+
+<script type="module" src="/user/JavaScript/dashboard.js"></script>
+</body>
+</html>
