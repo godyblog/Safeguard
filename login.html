@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Safeguard - your notes deserve a safe place</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="/styles/login.css" />
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">
+            <span>SafeGuard</span>
+        </a>
+
+        <a href="/signup.html" class="btn signup">Create Account</a>
+    </header>
+    
+    <div class="overlay">
+        <div class="loader"></div>
+    </div>
+    
+    <main>
+        <!-- LOGIN SECTION -->
+        <section id="authSection" aria-labelledby="login-title">
+            <div class="wrap">
+                
+                <h2 id="login-title">Login to access your dashboard</h2>
+
+                <form method="post" aria-describedby="authMessageDiv" id="loginForm">
+                    <div class="messageDiv" id="authMessageDiv" role="alert">Have</div>
+
+                    <div class="form-group">
+                        <div class="input-icon-wrapper">
+                            <input type="email"
+                                   name="email"
+                                   id="login-email"
+                                   required
+                                   autocomplete="email"
+                                   placeholder=" " />
+                            <label for="login-email">User Email</label>
+                            <i class="fa-solid fa-envelope icon" aria-hidden="true"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-icon-wrapper">
+                            <input type="password"
+                                   name="password"
+                                   id="login-password"
+                                   required
+                                   autocomplete="current-password"
+                                   placeholder=" " />
+                            <label for="login-password">Password</label>
+                            <i class="fa-solid fa-lock icon" aria-hidden="true"></i>
+                        </div>
+                    </div>
+
+                    <div class="form_actions">
+                        <button type="submit">Continue</button>
+                        <button type="button" id="forgotBtn">Forgot password</button>
+                    </div>
+                </form>
+
+                <div class="alternative_btns">
+                    <p>Don't have an account? <a href="/signup.html">Sign up</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESET SECTION -->
+        <section id="resetSection" aria-labelledby="reset-title" hidden>
+            <div class="wrap">
+                <h2 id="reset-title">Reset Password</h2>
+
+                <form method="post" id="resetForm" aria-describedby="resetMessageDiv">
+                    <div class="messageDiv" id="resetMessageDiv" role="alert"></div>
+
+                    <div class="form-group">
+                        <div class="input-icon-wrapper">
+                            <input type="email"
+                                   name="email"
+                                   id="rest-email"
+                                   required
+                                   autocomplete="email"
+                                   placeholder=" " />
+                            <label for="reset-email">User Email</label>
+                            <i class="fa-solid fa-envelope icon" aria-hidden="true"></i>
+                        </div>
+                    </div>
+
+                    <div class="form_actions">
+                        <button type="submit" id="resetBtn">Send Reset Email</button>
+                        <button type="button" id="cancel">Back to login</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&COPY; SafeGuard <span id="copyrightYear"></span> |
+            Powered by <a href="https://facebook.com/godlovetikum"
+            target="_blank" rel="noreferrer noopener">Gody Blogs</a>
+        </p>
+    </footer>
+    
+    <script type="module" src="/scripts/login.js"></script>
+</body>
+</html>
