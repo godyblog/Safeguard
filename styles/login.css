@@ -1,0 +1,229 @@
+:root {
+    --max-w: 980px;
+    --bg: #0d1117;
+    --panel: #0f1720;
+    --muted: #9fb3bf;
+    --text: #e6f7f5;
+    --accent: #00ffe4;
+    --accent-2: #00d6c0;
+    --danger: #ff6b6b;
+    --radius: 12px;
+    --glass: rgba(255, 255, 255, 0.02);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    --focus: 3px solid rgba(0, 255, 228, 0.12);
+}
+
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* Body */
+body {
+    background: linear-gradient(180deg, var(--bg), #07090b);
+    color: var(--text);
+    max-width: var(--max-w);
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 120;
+    backdrop-filter: blur(6px);
+    background: rgba(7, 10, 12, 0.35);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.logo {
+    color: var(--accent);
+    font-weight: 800;
+}
+
+main {
+    flex: 1;
+    padding: 2rem;
+}
+
+.messageDiv {
+    margin-bottom: 2rem;
+    padding: 5px;
+    border: 1px  solid #555;
+    border-left: 4px solid;
+    border-radius: 10px;
+    opacity: 0;
+    display: none;
+    transaction: all 0.1s ease;
+}
+
+
+header, footer, div, button, a, p, h2, body,
+section {
+    animation: fadeup 0.7s forwards;
+}
+
+@keyframes fadeup {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.wrap {
+    margin: 2rem auto;
+    background: var(--panel);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    max-width: 520px;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+}
+
+#authSection p {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+
+.form-group,
+.group {
+    margin-bottom: 2rem;
+}
+
+.input-icon-wrapper {
+    position: relative;
+}
+
+.input-icon-wrapper input {
+    width: 100%;
+    padding: 1rem 2.5rem 1rem 1rem;
+    border-radius: var(--radius);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--glass);
+    color: var(--text);
+}
+
+.input-icon-wrapper label,
+.group label {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.input-icon-wrapper input:focus,
+.group input:focus {
+    outline: var(--focus);
+}
+
+.input-icon-wrapper input:focus+label,
+.input-icon-wrapper input:not(:placeholder-shown)+label,
+.group input:focus+label,
+.group input:not(:placeholder-shown)+label {
+    top: -10px;
+    left: 5px;
+    font-size: 0.75rem;
+    opacity: 1;
+}
+
+.icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.6;
+}
+
+/* Actions */
+.form_actions {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.form_actions button {
+    padding: 0.9rem;
+    border-radius: var(--radius);
+    border: none;
+    background: var(--accent-2);
+    color: #000;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.form_actions button:hover {
+    background: var(--accent);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    border-top: 2px solid var(--muted);
+}
+
+footer a {
+    color: var(--muted);
+}
+
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(7, 10, 12, 0.45);
+    z-index: 9999;
+}
+
+
+.loader {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    background: transparent;
+    border: 6px solid rgba(255,255,255,0.06);
+    border-top-color: var(--accent);
+    border-right-color: var(--accent-2);
+    box-shadow:
+        0 0 12px rgba(0, 255, 228, 0.15),
+        0 0 22px rgba(0, 214, 192, 0.08);
+    animation: loaderSpin 0.5s linear infinite;
+}
+
+@keyframes loaderSpin {
+    to {
+        transform: rotate(300deg);
+    }
+}

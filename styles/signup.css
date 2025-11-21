@@ -1,0 +1,133 @@
+:root {
+    --clr-bg: #0a0a0a;
+    --clr-primary: #0ff;
+    --clr-secondary: #222;
+    --clr-text: #fff;
+    --clr-text-secondary: #ccc;
+    --max-width: 980px;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--clr-bg);
+    color: var(--clr-text);
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    padding: 1rem;
+    text-align: center;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.logo .safe {
+    color: var(--clr-primary);
+}
+
+.logo .guard {
+    color: var(--clr-text);
+}
+
+main {
+    flex: 1;
+    margin-top: 2rem;
+    padding: 2rem 1rem;
+}
+
+.signup-section .container {
+    max-width: 500px;
+    margin: auto;
+    background: var(--clr-secondary);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0ff2;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    background: #111;
+    color: var(--clr-text);
+}
+
+input:focus {
+    outline: 2px solid var(--clr-primary);
+}
+
+button.btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--clr-primary);
+    color: var(--clr-bg);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button.btn:hover {
+    background: #0ff8;
+}
+
+.hidden {
+    display: none;
+}
+
+.password-group {
+    display: flex;
+    align-items: center;
+}
+
+.password-group input {
+    flex: 1;
+}
+
+.password-group button {
+    background: transparent;
+    border: none;
+    color: var(--clr-primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.password-reset {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.password-reset a {
+    color: var(--clr-primary);
+    text-decoration: none;
+}
+
+.password-reset a:hover {
+    text-decoration: underline;
+}
