@@ -1,56 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Email Verification</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification | SafeGuard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="/verified/styles.css">
 </head>
 <body>
-  <h1>Email Verification</h1>
-  <p id="status">Verifying your email...</p>
+    <header>
+        <a href="/" class="logo"><span>Safe</span><span>Guard</span></a>
+    </header>
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
-    import { getAuth, applyActionCode } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
+    <main>
+        <div class="wrap">
+            <h2>Email Verification</h2>
+            <div id="messageDiv" class="messageDiv" role="alert"></div>
+            <div id="actionDiv" class="actions">
+                <button id="loginBtn" hidden>Go to Login</button>
+            </div>
+        </div>
+    </main>
 
-    const firebaseConfig = {
-  apiKey: "AIzaSyB2IoBPgUnumshpcdg28AvbRMONdSYMEAU",
-  authDomain: "safeguard-76e36.firebaseapp.com",
-  projectId: "safeguard-76e36",
-  storageBucket: "safeguard-76e36.firebasestorage.app",
-  messagingSenderId: "639820898310",
-  appId: "1:639820898310:web:58bddb80f77ee9c0b6a387",
-  measurementId: "G-03Q9HBBQEF"
-};
+    <footer>
+        <p>&COPY; <span id="copyrightYear"></span> SafeGuard | Powered by <a href="https://facebook.com/godlovetikum" target="_blank" rel="noreferrer noopener">Gody Blogs</a></p>
+    </footer>
 
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
-    async function verifyEmail() {
-      const params = new URLSearchParams(window.location.search);
-      const mode = params.get('mode');
-      const oobCode = params.get('oobCode');
-      const continueUrl = '/login.html';
-
-      const status = document.getElementById('status');
-
-      if (mode === 'verifyEmail' && oobCode) {
-        try {
-          await applyActionCode(auth, oobCode);
-          status.textContent = "Email verified! Redirecting...";
-          setTimeout(() => {
-            window.location.href = continueUrl;
-          }, 2000);
-        } catch (error) {
-          console.error(error);
-          status.textContent = "Verification failed. The link may have expired.";
-        }
-      } else {
-        status.textContent = "Invalid verification link.";
-      }
-    }
-
-    verifyEmail();
-  </script>
+    <script type="module" src="/verified/JavaScript.js"></script>
 </body>
 </html>

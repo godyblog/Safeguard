@@ -1,0 +1,91 @@
+:root {
+    --bg: #0d1117;
+    --panel: #0f1720;
+    --text: #e6f7f5;
+    --accent: #00ffe4;
+    --accent-2: #00d6c0;
+    --danger: #ff6b6b;
+    --radius: 12px;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    --focus: 3px solid rgba(0, 255, 228, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+    max-width: 500px;
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    //background: url("https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&q=80&w=1470") no-repeat center center / cover;
+    position: relative;
+    background-color: var(--panel); //rgba(10, 10, 26, 0.85);
+    background-blend-mode: multiply;
+}
+
+header {
+    width: 100%;
+    padding: 1rem;
+    background: var(--bg);
+    border-bottom: 2px solid var(--focus);
+}
+
+.logo {
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.logo span:first-child { color: var(--accent); }
+.logo span:last-child { color: var(--accent-2); font-weight: 700; }
+
+.wrap {
+    background: var(--panel);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+.messageDiv {
+    margin: 1rem 0;
+    padding: 1rem;
+    border: 1px solid;
+    border-left: 4px solid;
+    border-radius: var(--radius);
+}
+
+.actions button {
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--radius);
+    border: none;
+    background: var(--accent-2);
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.actions button:hover {
+    background: var(--accent);
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    opacity: 0.8;
+    padding: 8px;
+    background: var(--bg);
+    border-top: 1px solid var(--accent);
+}
