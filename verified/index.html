@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Email Verification</title>
+</head>
+<body>
+  <h1>Email Verification</h1>
+  <p id="status">Verifying your email...</p>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+    import { getAuth, applyActionCode } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
+
+    const firebaseConfig = {
+  apiKey: "AIzaSyB2IoBPgUnumshpcdg28AvbRMONdSYMEAU",
+  authDomain: "safeguard-76e36.firebaseapp.com",
+  projectId: "safeguard-76e36",
+  storageBucket: "safeguard-76e36.firebasestorage.app",
+  messagingSenderId: "639820898310",
+  appId: "1:639820898310:web:58bddb80f77ee9c0b6a387",
+  measurementId: "G-03Q9HBBQEF"
+};
+
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    async function verifyEmail() {
+      const params = new URLSearchParams(window.location.search);
+      const mode = params.get('mode');
+      const oobCode = params.get('oobCode');
+      const continueUrl = '/login.html';
+
+      const status = document.getElementById('status');
+
+      if (mode === 'verifyEmail' && oobCode) {
+        try {
+          await applyActionCode(auth, oobCode);
+          status.textContent = "Email verified! Redirecting...";
+          setTimeout(() => {
+            window.location.href = continueUrl;
+          }, 2000);
+        } catch (error) {
+          console.error(error);
+          status.textContent = "Verification failed. The link may have expired.";
+        }
+      } else {
+        status.textContent = "Invalid verification link.";
+      }
+    }
+
+    verifyEmail();
+  </script>
+</body>
+</html>
